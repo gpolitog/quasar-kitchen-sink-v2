@@ -88,6 +88,33 @@ See [Simple router example app](https://github.com/vuejs/vue-router/blob/dev/exa
 
 ## Code examples
 
-We will be trying to display code examples using [prism](http://prismjs.com/).
+We will be trying to display code examples using either: 
+- [higlightjs](https://highlightjs.org/usage/) see [isagalaev](https://github.com/isagalaev/highlight.js)
 
-Is there another ready to use Vue2 compatible *code syntax highlighter*? If not we should make one!
+Is there a ready to use Vue2 compatible *code syntax highlighter*? If not we should make one!
+
+We will use a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) 
+to highlight code when component is mounted.
+
+```js
+const worker = new Worker('workers/syntax-highlighter.js');
+
+mount: () => {
+  var code = document.querySelector('pre code');
+
+  worker.onmessage = function(event) { 
+    code.innerHTML = event.data; 
+  }
+  worker.postMessage(code.textContent);
+})
+```
+
+In `workers/syntax-highlighter.js`
+
+```js
+onmessage = function(event) {
+  importScripts('<path>/highlight.pack.js');
+  var result = self.hljs.highlightAuto(event.data);
+  postMessage(result.value);
+}
+```

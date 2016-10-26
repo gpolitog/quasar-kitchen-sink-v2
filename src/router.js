@@ -18,7 +18,7 @@ function load (name) {
   }
 }
 
-export default new VueRouter({
+const router = new VueRouter({
   routes: [
     { path: '/', component: load('index'), name: 'index' }, // Default
     { path: '*', component: load('error404') }, // Not found
@@ -28,3 +28,6 @@ export default new VueRouter({
     { path: '/list', component: load('list'), name: 'list' }
   ]
 })
+
+export default router
+

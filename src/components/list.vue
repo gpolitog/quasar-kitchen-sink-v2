@@ -8,11 +8,15 @@
         </div>
       </div>
     </div>
-
-    <pre>
-      <code class="language-js">
-        console.log('hello world')
-      </code>
-    </pre>
+    <code-display title="List example" :code="code" language="html"></code-display
   </div>
 </template>  
+<script>
+export default {
+  data: () => {
+    return {
+      code: require('../examples/list/basic.html')
+    }
+  }
+}
+</script>
