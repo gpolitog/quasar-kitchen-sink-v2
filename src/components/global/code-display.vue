@@ -3,41 +3,31 @@
     .code-title {{ title }}
     pre
       code(:class="language")
-        slot(name="code-slot")
+        slot(name="code-block")
           Code goes here!
 </template>
 
 <script>
 // const worker = new Worker('workers/syntax-highlighter.js')
 // log('worker', worker)
-
 const log = console.log
 import hljs from 'highlight.js'
 
 export default {
-  props: ['title', 'code', 'codeSlot', 'language'],
+  props: ['title', 'code', 'language', 'target'],
   methods: {
   },
   mounted () {
     this.$nextTick(() => {
-      log('mounted code-display')
-      log('language', this.language)
-      log('code', this.code)
-      log('codeSlot', this.codeSlot)
-
-      let codeEl = document.querySelector('code')
+      let codeEl = this.$el.querySelector('code')
 
       var code = this.code || codeEl.textContent
       if (!code) {
         log('missing code property to be displayed...')
         return
       }
-      else {
-        log('highlight code', code)
-        let highlighted = hljs.highlight(this.language, code).value
-        log('highlighted', highlighted)
-        codeEl.innerHTML = highlighted
-      }
+      let highlighted = hljs.highlightAuto(code).value
+      codeEl.innerHTML = highlighted
     })
   }
 }
@@ -45,7 +35,7 @@ export default {
 
 <style lang="css">
 pre {
-  background: #696276;
+  background: darkslateblue;
   width: 100%;
   border: 4px solid silver;
   padding: 1em;

@@ -90,7 +90,7 @@ See [Simple router example app](https://github.com/vuejs/vue-router/blob/dev/exa
 
 ## Component registration
 
-## Load all components from folder
+### Load all components from folder
 
 Ideally we would like to load all components available from a folder...
 
@@ -106,34 +106,42 @@ Version 9.7 Has been installed via [npm](https://www.npmjs.com/package/highlight
 
 See [API](http://highlightjs.readthedocs.io/en/latest/api.html)  
 
-Adding this on `index.html` is ignored! 
-
-```html
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
-```
-
-Now using webpack loaders instead:
+Using webpack loader instead (perhaps better from `main.js`):
 
 ```js
 import hljs from 'highlight.js'
 require('highlight.js/styles/monokai.css')
 ```
 
+The `code-display` takes these props:
+
+- `title` - title of component
+- `code` code to highlight 
+- `language` - language of code to highlight 
+
+```html
+<code-display title="VM" language="javascript" :code="vm"> 
+</code-display>
+```
 
 ```js
-var code = document.querySelector('code')
-if (!code) {
-  log('missing code property to be displayed...')
-  return
+export default {
+  data: () => {
+    return {
+      vm: `console.log('hello world')`,
+      view: `<span>show time</span>`
+    }
+  }
 }
-else {
-  let content = code.textContent
-  log('highlight code', content)
-  let highlighted = hljs.highlight(this.language, content).value
-  log('highlighted', highlighted)
-  code.innerHTML = highlighted
-}
+```
+
+For multiple code displays:
+
+```html
+<code-display id="vm" target="vm" title="VM" language="javascript" :code="vm"> 
+</code-display>
+<code-display id="view" target="view" title="View" language="html" :code="view"> 
+</code-display>
 ```
 
 Highlighted code:

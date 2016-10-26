@@ -7,7 +7,9 @@
         </a>
       </li>
     </ul>
-    <code-display title="Breadcrumb View" language="html" :code="code">
+    <code-display title="VM" language="html" :code="code.vm">
+    </code-display>  
+    <code-display title="View" language="html" :code="code.view">
     </code-display>  
   </section>  
 </template>
@@ -20,7 +22,24 @@ export default {
       items: [
         { link: 'home', label: 'Home' }
       ],
-      code: `<span>hello world</span>`
+      code: {
+        view: `<ul class="breadcrumb">
+  <li v-for="item in items">
+    <a>
+      <i>{{ item.icon }}</i> {{ item.label }}
+    </a>
+  </li>
+</ul>`,
+        vm: `export default {
+  data: () => {
+    return {
+      items: [
+        { link: 'home', label: 'Home' }
+      ],
+    }
+  }
+}`
+      }
     }
   }
 }
