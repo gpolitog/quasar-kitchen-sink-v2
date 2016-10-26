@@ -1,10 +1,10 @@
 # Quasar Kitchen Sink v2 App
 
-> A [Quasar](http://quasar-framework.org/) Kitchen Sink app for Vue2. 
->
-> Initialized using [Quasar CLI](https://github.com/rstoenescu/quasar-cli) with the `v2` [template](https://github.com/rstoenescu/quasar-templates/tree/v2).
+A [Quasar](http://quasar-framework.org/) Kitchen Sink app for Vue2. 
 
-> Demonstrates most of the [Quasar components](http://quasar-framework.org/components/) available with code that you can reuse for your project.
+Initialized using [Quasar CLI](https://github.com/rstoenescu/quasar-cli) with the `v2` [template](https://github.com/rstoenescu/quasar-templates/tree/v2).
+
+Demonstrates most of the [Quasar components](http://quasar-framework.org/components/) available with code that you can reuse for your project.
 
 ## Community
 
