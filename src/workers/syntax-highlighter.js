@@ -3,6 +3,7 @@
 onmessage = function (event) {
   // importScripts('/highlight.pack.js');
   console.log('received', event.data)
+  console.log('highlighter method', self.hljs.highlightAuto)
 
   var result = self.hljs.highlightAuto(event.data)
 

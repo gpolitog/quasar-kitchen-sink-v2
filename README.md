@@ -100,9 +100,32 @@ Ideally we would like to load all components available from a folder...
 
 We will be trying to display code examples using [higlightjs](https://highlightjs.org/usage/)
 
-Q: Is there a ready to use Vue2 compatible *code syntax highlighter*? OK, we will make one! 
+See [highlightjs Docs](http://highlightjs.readthedocs.io/en/latest/)
 
-We will use a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) 
+Version 9.7 Has been installed via `npm` and exports the `hljs` variable.
+
+See [API](http://highlightjs.readthedocs.io/en/latest/api.html)  
+
+Almost got it working, just need to play with API!! 
+
+```js
+var code = document.querySelector('code')
+if (!code) {
+  log('missing code property to be displayed...')
+  return
+}
+else {
+  let content = code.textContent
+  log('highlight code', content)
+  let highlighted = hljs.highlightAuto(content)
+  log('highlighted', highlighted)
+  code.innerHTML = highlighted
+}
+```
+
+### Using WebWorkers
+
+We could also use a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) 
 to highlight code when component is mounted.
 
 ```js
@@ -111,10 +134,11 @@ const worker = new Worker('workers/syntax-highlighter.js');
 mount: () => {
   var code = document.querySelector('pre code');
 
-  worker.onmessage = function(event) { 
-    code.innerHTML = event.data; 
+  worker.onmessage = function (event) {
+    log('received data', event.data)
+    code.innerHTML = event.data
   }
-  worker.postMessage(code.textContent);
+  worker.postMessage(code.textContent)
 })
 ```
 

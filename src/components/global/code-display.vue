@@ -3,30 +3,39 @@
     <div class="code-title">{{ title }}</div>
     <pre>
       <code :class="language">
-        {{ code }}
+        <slot name="code">
+          Code goes here!
+        <slot>  
       </code>
     </pre>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-
-const worker = new Worker('workers/syntax-highlighter.js')
-console.log('worker', worker)
+// const worker = new Worker('workers/syntax-highlighter.js')
+const log = console.log
+// log('worker', worker)
+import hljs from 'highlight.js'
 
 export default {
   props: ['title', 'code', 'language'],
-  mounted: () => {
-    Vue.nextTick(() => {
-      console.log('mounted code-display', this.language, this.title, this.code)
+  mounted () {
+    this.$nextTick(() => {
+      log('mounted code-display')
+      log('language', this.language)
 
-      var code = this.code
-      if (!code) return
-      worker.onmessage = function (event) {
-        code.innerHTML = event.data
+      var code = document.querySelector('code')
+      if (!code) {
+        log('missing code property to be displayed...')
+        return
       }
-      worker.postMessage(code.textContent)
+      else {
+        let content = code.textContent
+        log('highlight code', content)
+        let highlighted = hljs.highlightAuto(content)
+        log('highlighted', highlighted)
+        code.innerHTML = highlighted
+      }
     })
   }
 }

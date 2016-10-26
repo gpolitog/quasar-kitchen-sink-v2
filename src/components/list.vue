@@ -8,7 +8,9 @@
         </div>
       </div>
     </div>
-    <code-display title="List example" :code="code" language="html"></code-display
+    <code-display title="List example" language="javascript">
+      <span slot="code">console.log('hello world')</span> 
+    </code-display>
   </div>
 </template>  
 <script>
