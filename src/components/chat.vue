@@ -4,7 +4,7 @@
       <!-- Message received from peer -->
       <div class="chat-other">
         <div class="chat-user">
-          <img src="avatars/linux-avatar.png">
+          <img src="~assets/avatars/linux-avatar.png">
         </div>
         <div class="chat-date">
           {{ received.timeAgo }
@@ -18,7 +18,7 @@
       <!-- Message sent by you -->
       <div class="chat-you">
         <div class="chat-user">
-          <img src="avatars/boy-avatar.png">
+          <img src="~assets/avatars/boy-avatar.png">
         </div>
         <div class="chat-date">
           {{ sent.timeAgo }}
