@@ -37,3 +37,37 @@ quasar test
 Run: `cd electron && npm start`
 
 Configured to use hot reload. Whenever the app is recompiled into `/dist` it will hot load the app!
+
+## Adding components
+
+To render the index (list) of components we use a [v-for loop](http://vuejs.org/guide/#Conditionals-and-Loops) 
+over a number of data `items`. 
+
+In `components/index.vue` add links in `data/items` Array:
+
+```js
+export default {
+  data: {
+    items: [
+      { link: 'breadcrumb', label: 'Breadcrumb' },
+      // insert more here ...
+    ]
+  }
+}
+```
+
+The `index` component is set up to render a list of links to display each component: 
+
+```html
+<div class="list">
+  <div class="item" v-for="item in items">
+    <div class="item-content">
+      <router-link :to="{ name: item.link }">{{ item.label }}</router-link>
+    </div>
+  </div>
+</div>    
+```
+
+It should in effect be resolved to the same as:
+
+`<router-link :to="{ name: 'breadcrumb' }">Breadcrumb</router-link>`
