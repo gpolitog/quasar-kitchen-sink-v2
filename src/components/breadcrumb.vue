@@ -23,7 +23,7 @@ export default {
     return {
       items: [
         { icon: 'home', label: 'Home' },
-        { icon: 'arrow', label: 'Run' },
+        { icon: 'build', label: 'Build' },
         { icon: 'cloud', label: 'Cloud' }
       ],
       code: {

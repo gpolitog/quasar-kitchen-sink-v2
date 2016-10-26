@@ -12,9 +12,9 @@
       <code-display title="VM" language="html" :code="code.vm">
       </code-display>  
       <code-display title="View" language="html" :code="code.view">
-      </code-display>        
+      </code-display>
     </section>
-  </div>      
+  </div>
 </template>
 <script>
 const vm = require('raw!../examples/button/vm.js.txt')

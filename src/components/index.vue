@@ -32,6 +32,7 @@ export default {
       items: [
         { link: 'breadcrumb', label: 'Breadcrumb' },
         { link: 'button', label: 'Button' },
+        { link: 'card', label: 'Card' },
         { link: 'list', label: 'List' }
       ]
     }
