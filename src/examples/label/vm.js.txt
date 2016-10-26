@@ -1,0 +1,12 @@
+export default {
+  data: () => {
+    return {
+      labels: {
+        basic: [
+          { text: 'one' },
+          { text: 'two' }
+        ] 
+      }
+    }
+  }
+}
