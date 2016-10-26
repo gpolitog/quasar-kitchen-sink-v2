@@ -102,11 +102,24 @@ We will be trying to display code examples using [higlightjs](https://highlightj
 
 See [highlightjs Docs](http://highlightjs.readthedocs.io/en/latest/)
 
-Version 9.7 Has been installed via `npm` and exports the `hljs` variable.
+Version 9.7 Has been installed via [npm](https://www.npmjs.com/package/highlight.js) and exports the `hljs` variable.
 
 See [API](http://highlightjs.readthedocs.io/en/latest/api.html)  
 
-Almost got it working, just need to play with API!! 
+Adding this on `index.html` is ignored! 
+
+```html
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+```
+
+Now using webpack loaders instead:
+
+```js
+import hljs from 'highlight.js'
+require('highlight.js/styles/monokai.css')
+```
+
 
 ```js
 var code = document.querySelector('code')
@@ -117,10 +130,16 @@ if (!code) {
 else {
   let content = code.textContent
   log('highlight code', content)
-  let highlighted = hljs.highlightAuto(content)
+  let highlighted = hljs.highlight(this.language, content).value
   log('highlighted', highlighted)
   code.innerHTML = highlighted
 }
+```
+
+Highlighted code:
+
+```html
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello world'</span>)
 ```
 
 ### Using WebWorkers

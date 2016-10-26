@@ -13,9 +13,11 @@
 
 <script>
 // const worker = new Worker('workers/syntax-highlighter.js')
-const log = console.log
 // log('worker', worker)
+
+const log = console.log
 import hljs from 'highlight.js'
+require('highlight.js/styles/dracula.css')
 
 export default {
   props: ['title', 'code', 'language'],
@@ -32,7 +34,7 @@ export default {
       else {
         let content = code.textContent
         log('highlight code', content)
-        let highlighted = hljs.highlightAuto(content)
+        let highlighted = hljs.highlight(this.language, content).value
         log('highlighted', highlighted)
         code.innerHTML = highlighted
       }
