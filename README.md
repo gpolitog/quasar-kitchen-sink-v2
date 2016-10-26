@@ -82,11 +82,20 @@ The `index` component is set up to render a list of links to display each compon
 </div>    
 ```
 
-It should in effect be resolved to the same as:
+It will be resolved to the same as:
 
 `<router-link :to="{ name: 'breadcrumb' }">Breadcrumb</router-link>`
 
 See [Simple router example app](https://github.com/vuejs/vue-router/blob/dev/examples/named-routes/app.js)
+
+## Static Assets
+
+
+There are two folders for assets:
+- `src/assets/` 
+- `src/statics/`
+
+Read the guide [Handling Static Assets](http://quasar-framework.org/guide/app-handling-static-assets.html) to understand how Quasar handles static assets!
 
 ## Component registration
 
