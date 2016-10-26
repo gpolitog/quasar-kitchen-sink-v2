@@ -1,0 +1,16 @@
+export default {
+  data: () => {
+    return {
+      received: {
+        timeAgo: '1 minute ago',
+        message: 'hi there'
+      },
+      sent: {
+        timeAgo: '1 minute ago',
+        message: 'hello'
+      }      
+    }
+  },
+  methods: {
+  }
+}

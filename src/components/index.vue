@@ -33,6 +33,7 @@ export default {
         { link: 'breadcrumb', label: 'Breadcrumb' },
         { link: 'button', label: 'Button' },
         { link: 'card', label: 'Card' },
+        { link: 'chat', label: 'Chat' },
         { link: 'list', label: 'List' }
       ]
     }

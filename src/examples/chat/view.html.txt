@@ -1,0 +1,27 @@
+<div class="chat-other">
+  <div class="chat-user">
+    <img src="assets/linux-avatar.png">
+  </div>
+  <div class="chat-date">
+    {{ received.timeAgo }
+  </div>
+  <div class="chat-message">
+    <p>
+      {{ received.message }
+    </p>
+  </div>
+</div>
+<!-- Message sent by you -->
+<div class="chat-you">
+  <div class="chat-user">
+    <img src="assets/boy-avatar.png">
+  </div>
+  <div class="chat-date">
+    {{ sent.timeAgo }}
+  </div>
+  <div class="chat-message">
+    <p>
+      {{ sent.message }}
+    </p>
+  </div>
+</div>
