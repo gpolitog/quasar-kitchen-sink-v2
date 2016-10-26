@@ -12,6 +12,10 @@ import App from './App'
 require('quasar/dist/quasar.' + __THEME + '.css')
 // ==============================
 
+const highlightTheme = 'gruvbox-dark'
+
+require('highlight.js/styles/' + highlightTheme + '.css')
+
 Quasar.theme.set(__THEME)
 Vue.use(Quasar) // Install Quasar Framework
 

@@ -20,7 +20,10 @@
     "material-design-icons": "^3.0.1",
     "moment": "^2.15.0",
     "quasar-framework": "0.x",
+    "raw-loader": "^0.5.1",
+    "raw-text-loader": "^0.1.0",
     "roboto-fontface": "^0.6.0",
+    "text-loader": "0.0.1",
     "velocity-animate": "^1.2.3",
     "vue": "^2.0.0",
     "vue-router": "^2.0.0"

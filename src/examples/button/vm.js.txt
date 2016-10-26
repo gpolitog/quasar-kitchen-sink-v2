@@ -1,0 +1,13 @@
+export default {
+  data: () => {
+    return {
+      clicks: 1
+    }
+  },
+  methods: {
+    onClick (event) {
+      this.clicks++
+      console.log('clicks', this.clicks)
+    }
+  }
+}

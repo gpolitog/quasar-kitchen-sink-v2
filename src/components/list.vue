@@ -15,8 +15,13 @@
       </code-display>
     </section>
   </div>
-</template>  
+</template>
 <script>
+const vm = require('raw!../examples/list/vm.js.txt')
+const view = require('raw!../examples/list/view.html.txt')
+
+console.log('vm', vm)
+
 export default {
   data: () => {
     return {
@@ -25,24 +30,8 @@ export default {
         'Mike'
       ],
       code: {
-        vm: `export default {
-  data: () => {
-    return {
-      friends: [
-        'Anna',
-        'Mike'
-      ]
-    }
-  }
-}`,
-        view: `<p class="caption">List</p>
-<div class="list platform-delimiter">
-  <div class="item" v-for="friend in friends">
-    <div class="item-content">
-      {{ friend }}
-    </div>
-  </div>
-</div>`
+        vm: vm,
+        view: view
       }
     }
   }

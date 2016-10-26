@@ -31,6 +31,7 @@ export default {
     return {
       items: [
         { link: 'breadcrumb', label: 'Breadcrumb' },
+        { link: 'button', label: 'Button' },
         { link: 'list', label: 'List' }
       ]
     }

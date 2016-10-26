@@ -1,0 +1,8 @@
+<p class="caption">List</p>
+<div class="list platform-delimiter">
+  <div class="item" v-for="friend in friends">
+    <div class="item-content">
+      {{ friend }}
+    </div>
+  </div>
+</div>

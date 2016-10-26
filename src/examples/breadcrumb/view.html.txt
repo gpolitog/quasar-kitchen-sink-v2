@@ -1,0 +1,7 @@
+<ul class="breadcrumb">
+  <li v-for="item in items">
+    <a>
+      <i>{{ item.icon }}</i> {{ item.label }}
+    </a>
+  </li>
+</ul>

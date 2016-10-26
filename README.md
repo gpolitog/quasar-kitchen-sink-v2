@@ -103,33 +103,47 @@ We will be trying to display code examples using [higlightjs](https://highlightj
 See [highlightjs Docs](http://highlightjs.readthedocs.io/en/latest/)
 
 Version 9.7 Has been installed via [npm](https://www.npmjs.com/package/highlight.js) and exports the `hljs` variable.
-
 See [API](http://highlightjs.readthedocs.io/en/latest/api.html)  
-
-Using webpack loader instead (perhaps better from `main.js`):
 
 ```js
 import hljs from 'highlight.js'
-require('highlight.js/styles/monokai.css')
 ```
 
 The `code-display` takes these props:
 
 - `title` - title of component
 - `code` code to highlight 
-- `language` - language of code to highlight 
+- `language` - language of code to highlight (optional: uses auto-detect per default!) 
 
 ```html
-<code-display title="VM" language="javascript" :code="vm"> 
-</code-display>
+<code-display title="VM" language="javascript" :code="vm"></code-display>
 ```
+
+You can also use the `slot` variant for simple cases: <span slot="code-block">var a = 2;</span>
+
+### Styling the highlight
+
+We use webpack loader from `main.js` to load a highlight theme
+
+```js
+const highlightTheme = 'gruvbox-dark'
+require('highlight.js/styles/' + highlightTheme + '.css')
+```
+
+For theme overview, see: `node_modules/highlight.js/styles` 
+
+### Loading the code 
+We use the `raw-text` webpack loader with `!raw` prefix to load the text file into the code at compile time :)
+Configured in `build/webpack.base.conf.js` 
 
 ```js
 export default {
   data: () => {
     return {
-      vm: `console.log('hello world')`,
-      view: `<span>show time</span>`
+      code: {
+        vm: require('raw!../examples/breadcrumb/vm.js.txt'),
+        view: require('raw!../examples/breadcrumb/view.html.txt')
+      }
     }
   }
 }
@@ -138,9 +152,9 @@ export default {
 For multiple code displays:
 
 ```html
-<code-display id="vm" target="vm" title="VM" language="javascript" :code="vm"> 
+<code-display title="VM" :code="vm"> 
 </code-display>
-<code-display id="view" target="view" title="View" language="html" :code="view"> 
+<code-display title="View" :code="view"> 
 </code-display>
 ```
 

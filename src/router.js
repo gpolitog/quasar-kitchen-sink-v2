@@ -25,6 +25,7 @@ const router = new VueRouter({
 
     // TODO: generate!
     { path: '/breadcrumb', component: load('breadcrumb'), name: 'breadcrumb' },
+    { path: '/button', component: load('button'), name: 'button' },
     { path: '/list', component: load('list'), name: 'list' }
   ]
 })

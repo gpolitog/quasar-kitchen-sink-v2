@@ -44,6 +44,10 @@ module.exports = {
         loader: 'vue'
       },
       {
+        test: /\.txt$/,
+        loader: 'raw-text'
+      },
+      {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,

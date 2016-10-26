@@ -1,0 +1,8 @@
+<!-- Regular shaped -->
+<button class="primary" @click="onClick()">
+  Button Label
+</button>
+<!-- Circular shaped; only use icon as content -->
+<button class="primary circular">
+  <i>alarm</i>
+</button>
