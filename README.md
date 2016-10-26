@@ -38,6 +38,16 @@ Run: `cd electron && npm start`
 
 Configured to use hot reload. Whenever the app is recompiled into `/dist` it will hot load the app!
 
+## Development
+
+Run `npm run dev`
+
+Open `localhost:8080` in Chrome
+
+Start developing and notice the hot loading of your changes at work!
+
+Open *Chrome dev tools* and check the browser *console* for errors to help you better debug ;)
+
 ## Adding components
 
 To render the index (list) of components we use a [v-for loop](http://vuejs.org/guide/#Conditionals-and-Loops) 
@@ -75,3 +85,9 @@ It should in effect be resolved to the same as:
 `<router-link :to="{ name: 'breadcrumb' }">Breadcrumb</router-link>`
 
 See [Simple router example app](https://github.com/vuejs/vue-router/blob/dev/examples/named-routes/app.js)
+
+## Code examples
+
+We will be trying to display code examples using [prism](http://prismjs.com/).
+
+Is there another ready to use Vue2 compatible *code syntax highlighter*? If not we should make one!

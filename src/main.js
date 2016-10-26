@@ -11,6 +11,9 @@ import App from './App'
 require('quasar/dist/quasar.' + __THEME + '.css')
 // ==============================
 
+require('prismjs')
+require('prismjs/themes/prism.css')
+
 Quasar.theme.set(__THEME)
 Vue.use(Quasar) // Install Quasar Framework
 

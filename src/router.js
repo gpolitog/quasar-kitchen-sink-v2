@@ -20,8 +20,11 @@ function load (name) {
 
 export default new VueRouter({
   routes: [
-    { path: '/', component: load('index') }, // Default
-    { path: '/breadcrumb', component: load('breadcrumb') }, // Default
-    { path: '*', component: load('error404') } // Not found
+    { path: '/', component: load('index'), name: 'index' }, // Default
+    { path: '*', component: load('error404') }, // Not found
+
+    // TODO: generate!
+    { path: '/breadcrumb', component: load('breadcrumb'), name: 'breadcrumb' },
+    { path: '/list', component: load('list'), name: 'list' }
   ]
 })

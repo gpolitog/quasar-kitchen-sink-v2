@@ -18,6 +18,7 @@
     "fastclick": "^1.0.6",
     "material-design-icons": "^3.0.1",
     "moment": "^2.15.0",
+    "prismjs": "^1.5.1",
     "quasar-framework": "0.x",
     "roboto-fontface": "^0.6.0",
     "velocity-animate": "^1.2.3",

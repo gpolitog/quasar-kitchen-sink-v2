@@ -12,14 +12,15 @@
       if using subRoutes
     -->
     <div class="layout-view">
-      <p class="caption">Basic List</p>
+      <p class="caption">Quasar Kitchen Sink Components</p>
       <div class="list">
         <div class="item" v-for="item in items">
           <div class="item-content">
             <router-link :to="{ name: item.link }">{{ item.label }}</router-link>
           </div>
         </div>
-      </div>    
+      </div>
+       <router-view></router-view>    
     </div>
   </quasar-layout>
 </template>
@@ -29,7 +30,8 @@ export default {
   data: () => {
     return {
       items: [
-        { link: 'breadcrumb', label: 'Breadcrumb' }
+        { link: 'breadcrumb', label: 'Breadcrumb' },
+        { link: 'list', label: 'List' }
       ]
     }
   }
