@@ -47,11 +47,13 @@ In `components/index.vue` add links in `data/items` Array:
 
 ```js
 export default {
-  data: {
-    items: [
-      { link: 'breadcrumb', label: 'Breadcrumb' },
-      // insert more here ...
-    ]
+  data: () => {
+    return {
+      items: [
+        { link: 'breadcrumb', label: 'Breadcrumb' },
+        // insert more here ...
+      ]
+    }
   }
 }
 ```
@@ -71,3 +73,5 @@ The `index` component is set up to render a list of links to display each compon
 It should in effect be resolved to the same as:
 
 `<router-link :to="{ name: 'breadcrumb' }">Breadcrumb</router-link>`
+
+See [Simple router example app](https://github.com/vuejs/vue-router/blob/dev/examples/named-routes/app.js)

@@ -11,10 +11,12 @@
 <script>
 // import { Utils } from 'quasar'
 export default {
-  data: {
-    items: [
-      { link: 'home', label: 'Home' }
-    ]
+  data: () => {
+    return {
+      items: [
+        { link: 'home', label: 'Home' }
+      ]
+    }
   }
 }
 </script>

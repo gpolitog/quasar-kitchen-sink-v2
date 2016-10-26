@@ -13,24 +13,25 @@
     -->
     <div class="layout-view">
       <p class="caption">Basic List</p>
-        <div class="list">
-          <div class="item" v-for="item in items">
-            <div class="item-content">
-              {{ item.label }}
-            </div>
+      <div class="list">
+        <div class="item" v-for="item in items">
+          <div class="item-content">
+            <router-link :to="{ name: item.link }">{{ item.label }}</router-link>
           </div>
-        </div>    
+        </div>
+      </div>    
     </div>
   </quasar-layout>
 </template>
 
 <script>
-// import { Utils } from 'quasar'
 export default {
-  data: {
-    items: [
-      { link: 'breadcrumb', label: 'Breadcrumb' }
-    ]
+  data: () => {
+    return {
+      items: [
+        { link: 'breadcrumb', label: 'Breadcrumb' }
+      ]
+    }
   }
 }
 </script>
