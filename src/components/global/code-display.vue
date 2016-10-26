@@ -10,13 +10,17 @@
 </template>
 
 <script>
+import Vue from 'vue'
+
 const worker = new Worker('workers/syntax-highlighter.js')
 console.log('worker', worker)
 
 export default {
   props: ['title', 'code', 'language'],
   mounted: () => {
-    this.$nextTick(() => {
+    Vue.nextTick(() => {
+      console.log('mounted code-display', this.language, this.title, this.code)
+
       var code = this.code
       if (!code) return
       worker.onmessage = function (event) {
@@ -30,7 +34,8 @@ export default {
 
 <style lang="styl">
 .code-title
-  color: blue
+  color: gray
+  font-size: 1.5em
 </style>
 
 

@@ -55,6 +55,8 @@ over a number of data `items`.
 
 In `components/index.vue` add links in `data/items` Array:
 
+Note [data must be a function](http://vuejs.org/guide/components.html#data-Must-Be-a-Function)
+
 ```js
 export default {
   data: () => {
@@ -86,12 +88,19 @@ It should in effect be resolved to the same as:
 
 See [Simple router example app](https://github.com/vuejs/vue-router/blob/dev/examples/named-routes/app.js)
 
-## Code examples
+## Component registration
 
-We will be trying to display code examples using either: 
-- [higlightjs](https://highlightjs.org/usage/) see [isagalaev](https://github.com/isagalaev/highlight.js)
+## Load all components from folder
 
-Is there a ready to use Vue2 compatible *code syntax highlighter*? If not we should make one!
+Ideally we would like to load all components available from a folder...
+
+[webpack require.context](https://webpack.github.io/docs/context.html) should help us achieve this
+
+## Display Code examples
+
+We will be trying to display code examples using [higlightjs](https://highlightjs.org/usage/)
+
+Q: Is there a ready to use Vue2 compatible *code syntax highlighter*? OK, we will make one! 
 
 We will use a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) 
 to highlight code when component is mounted.
@@ -117,4 +126,35 @@ onmessage = function(event) {
   var result = self.hljs.highlightAuto(event.data);
   postMessage(result.value);
 }
+```
+
+### Global Component registration
+
+Registration of `code-display` component is done in `main.js`
+
+```js
+import CodeDisplay from './components/global/code-display'
+
+// Ideally iterate through global components!
+// Vue.component('code-display', components.global.CodeDisplay)
+Vue.component('code-display', CodeDisplay)
+```
+
+Usage:
+
+```html
+</template>
+    ...
+    <code-display title="List example" :code="code" language="html"></code-display
+  </div>
+</template>  
+<script>
+export default {
+  data: () => {
+    return {
+      code: require('../examples/list/basic.html')
+    }
+  }
+}
+</script>
 ```
