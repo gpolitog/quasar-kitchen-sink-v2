@@ -16,6 +16,7 @@ export default {
   data: () => {
     return {
       items: [
+        { link: 'root', label: '<-' },
         { link: 'datetime', label: 'Date & Time' },
         { link: 'checkbox', label: 'Checkbox' },
         { link: 'textbox', label: 'Textbox' }

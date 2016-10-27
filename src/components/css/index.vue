@@ -16,6 +16,7 @@ export default {
   data: () => {
     return {
       items: [
+        { link: 'root', label: '<-' },
         { link: 'breadcrumb', label: 'Breadcrumb' },
         { link: 'button', label: 'Button' },
         { link: 'card', label: 'Card' },

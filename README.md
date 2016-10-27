@@ -43,6 +43,17 @@ Configured to use hot reload. Whenever the app is recompiled into `/dist` it wil
 - Start developing and notice hot loading of your changes at work!
 - Open *Chrome dev tools* and check the _console_ tab for errors, to help you better debug ;)
 
+## Theming
+
+When building your App or starting the dev server you can only use one theme at a time. 
+You can however start two dev servers on different ports, each server with a theme. 
+This will allow you to see the App with both themes simultaneously.
+
+```
+$ quasar dev mat
+$ PORT=3000 quasar dev ios
+```
+
 ## Adding components
 To render the index (list) of components we use a [v-for loop](http://vuejs.org/guide/#Conditionals-and-Loops) 
 over a number of data `items`. 
