@@ -1,6 +1,5 @@
-import children from './children'
-import Index from './index'
-import load from '../router/load'
+import { createLoader } from '../../router/load'
+const load = createLoader('css')
 
 module.exports = [
     { path: '/breadcrumb', component: load('breadcrumb'), name: 'breadcrumb' },
@@ -10,4 +9,4 @@ module.exports = [
     { path: '/label', component: load('label'), name: 'label' },
     { path: '/list', component: load('list'), name: 'list' },
     { path: '/timeline', component: load('timeline/timeline-list'), name: 'timeline' }
-}
+]

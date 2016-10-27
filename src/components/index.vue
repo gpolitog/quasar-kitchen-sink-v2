@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-       <router-view></router-view>    
+       <router-view></router-view>
     </div>
   </quasar-layout>
 </template>
@@ -30,13 +30,8 @@ export default {
   data: () => {
     return {
       items: [
-        { link: 'breadcrumb', label: 'Breadcrumb' },
-        { link: 'button', label: 'Button' },
-        { link: 'card', label: 'Card' },
-        { link: 'chat', label: 'Chat' },
-        { link: 'label', label: 'Label' },
-        { link: 'list', label: 'List' },
-        { link: 'timeline', label: 'Timeline' }
+        { link: 'css', label: 'CSS' },
+        { link: 'form', label: 'Form' }
       ]
     }
   }

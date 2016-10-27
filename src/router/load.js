@@ -2,11 +2,8 @@
   Avoid lazy loading while in dev mode
   to benefit from HMR
  */
-export default function load (folder, name) {
-  let path = folder
-  if (folder && name) {
-    path = folder + '/' + name
-  }
+export function load (name, folder) {
+  const path = folder ? [folder, name].join('/') : name
 
   if (process.env.NODE_ENV === 'development') {
     return require('components/' + path + '.vue')
@@ -15,5 +12,11 @@ export default function load (folder, name) {
     return (resolve) => {
       require('bundle?lazy!components/' + path + '.vue')(resolve)
     }
+  }
+}
+
+export function createLoader (folder) {
+  return function (name) {
+    return load(name, folder)
   }
 }
