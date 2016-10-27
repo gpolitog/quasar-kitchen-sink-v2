@@ -102,6 +102,62 @@ const router = new VueRouter({
 
 See the Vue 2 [Forms guide](https://vuejs.org/guide/forms.html)
 
+## Routes
+
+Use [Nested routes](https://router.vuejs.org/en/essentials/nested-routes.html)
+
+```js
+const router = new VueRouter({
+  routes: [
+    {
+      path: '/css', component: CssIndex,
+      children: [
+        // UserHome will be rendered inside User's <router-view>
+        // when /user/:id is matched
+        { path: '', component: BreadCrumb },
+
+        // ...other sub routes
+      ]
+    }
+  ]
+})
+``` 
+
+We could instead load each route object with children from the component section folder:
+
+```js
+import css from './components/css/routes'
+import form from './components/css/routes'
+
+const router = new VueRouter({
+  routes: root.concat(css, form)
+})
+```
+
+Which when moved into `router/index.js` becomes super elegant!
+
+```js
+// router/routes.js
+import root from './root'
+import css from '../components/css/routes'
+import form from '../components/css/routes'
+
+export default root.concat(css, form)
+```
+
+Add the routes array imported!
+
+```js
+// router/index.js
+import routes from './routes'
+
+const router = new VueRouter({
+  routes
+})
+```
+
+Sweet awesomeness!!!
+
 ## Static Assets
 There are two folders for assets:
 - `src/assets/` 
