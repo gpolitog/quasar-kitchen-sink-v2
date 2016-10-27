@@ -16,7 +16,16 @@
 </template>
 <script>
 export default {
-  props: ['message'],
+  props: {
+    message: {
+      type: Object,
+      required: true,
+      validator: function (value) {
+        // TODO: check message format
+        return true
+      }
+    }
+  },
   methods: {
   },
   computed: {

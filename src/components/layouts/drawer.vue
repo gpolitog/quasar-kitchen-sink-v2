@@ -1,0 +1,67 @@
+<template>
+  <quasar-layout>
+    <quasar-drawer slot="left-drawer" ref="leftDrawer">
+      <div class="list platform-delimiter">
+        <div class="list-header">
+          Left Side Drawer
+        </div>
+        <quasar-drawer-link v-for="item in items" :icon="item.icon" :to="item.link" exact>{{ item.label }}</quasar-drawer-link>
+      </div>
+    </quasar-drawer>
+
+    <div slot="header" class="toolbar inverted orange">
+      <button
+        class="hide-on-drawer-visible"
+        @click="$refs.leftDrawer.open()"
+      >
+        <i>menu</i>
+      </button>      
+
+      <quasar-toolbar-title :padding="1">
+        Quasar Kitchen Sink Components
+      </quasar-toolbar-title>
+
+      <button
+        class="hide-on-drawer-visible"
+        @click="$refs.rightDrawer.open()"
+      >
+        <i>menu</i>
+      </button>      
+    </div>
+
+    <router-view class="layout-view"></router-view>
+
+    <quasar-drawer right-side ref="rightDrawer">
+      <div class="list platform-delimiter">
+        <div class="list-header">
+          Right Side Drawer
+        </div>
+        <quasar-drawer-link v-for="item in items" :icon="item.icon" :to="item.link" exact>{{ item.label }}</quasar-drawer-link>
+      </div>
+    </quasar-drawer>    
+  </quasar-layout>
+</template>
+<script>
+export default {
+  props: {
+    // TODO: use this instead, with default array
+    links: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    }
+  },
+  data: () => {
+    return {
+      items: [
+        { link: 'css', label: 'CSS', icon: 'alarm' },
+        { link: 'form', label: 'Form', icon: 'cloud' }
+      ]
+    }
+  }
+}
+</script>
+
+<style lang="styl">
+</style>

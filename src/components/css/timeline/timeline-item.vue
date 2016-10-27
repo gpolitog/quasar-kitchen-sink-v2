@@ -31,7 +31,12 @@
 </template>
 <script>
 export default {
-  props: ['item'],
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  },
   computed: {
     avatar () {
       return require('../../../assets/avatars/' + this.item.badge.user + '.png')
