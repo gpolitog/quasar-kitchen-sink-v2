@@ -28,7 +28,11 @@ const router = new VueRouter({
     { path: '/', component: load('index'), name: 'index' }, // Default
     { path: '*', component: load('error404') }, // Not found
 
+    { path: '/css', component: load('css', 'index'), name: 'css' },
+    { path: '/form', component: load('form', 'index'), name: 'form' },    
+
     // TODO: generate!
+    // TODO: move to css/index and form/index !?
     { path: '/breadcrumb', component: load('css', 'breadcrumb'), name: 'breadcrumb' },
     { path: '/button', component: load('css', 'button'), name: 'button' },
     { path: '/card', component: load('css', 'card'), name: 'card' },

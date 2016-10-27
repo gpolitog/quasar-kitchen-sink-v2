@@ -98,6 +98,10 @@ const router = new VueRouter({
 })    
 ```
 
+## Form input bindings
+
+See the Vue 2 [Forms guide](https://vuejs.org/guide/forms.html)
+
 ## Static Assets
 There are two folders for assets:
 - `src/assets/` 
