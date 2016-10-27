@@ -49,8 +49,8 @@ export default {
         ]
       },
       code: {
-        vm: require('raw!../examples/label/vm.js.txt'),
-        view: require('raw!../examples/label/view.html.txt')
+        vm: require('raw!../../examples/css/label/vm.js.txt'),
+        view: require('raw!../../examples/css/label/view.html.txt')
       }
     }
   }

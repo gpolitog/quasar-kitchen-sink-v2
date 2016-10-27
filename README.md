@@ -33,23 +33,17 @@ quasar test
 ```
 
 ## Electron
-
 Run: `cd electron && npm start`
 
 Configured to use hot reload. Whenever the app is recompiled into `/dist` it will hot load the app!
 
 ## Development
-
-Run `npm run dev`
-
-Open `localhost:8080` in Chrome
-
-Start developing and notice the hot loading of your changes at work!
-
-Open *Chrome dev tools* and check the browser *console* for errors to help you better debug ;)
+- Run `npm run dev`
+- Open `localhost:8080` in Chrome
+- Start developing and notice hot loading of your changes at work!
+- Open *Chrome dev tools* and check the _console_ tab for errors, to help you better debug ;)
 
 ## Adding components
-
 To render the index (list) of components we use a [v-for loop](http://vuejs.org/guide/#Conditionals-and-Loops) 
 over a number of data `items`. 
 
@@ -88,38 +82,42 @@ It will be resolved to the same as:
 
 See [Simple router example app](https://github.com/vuejs/vue-router/blob/dev/examples/named-routes/app.js)
 
+You also need to add a route for each component in `router.js`
+
+```js
+const router = new VueRouter({
+  routes: [
+    { path: '/', component: load('index'), name: 'index' }, // Default
+    { path: '*', component: load('error404') }, // Not found
+
+    // ...
+
+    { path: '/list', component: load('css', 'list'), name: 'list' },
+    { path: '/timeline', component: load('css', 'timeline/timeline-list'), name: 'timeline' }
+  ]
+})    
+```
+
 ## Static Assets
-
-
 There are two folders for assets:
 - `src/assets/` 
 - `src/statics/`
 
 Read the guide [Handling Static Assets](http://quasar-framework.org/guide/app-handling-static-assets.html) to understand how Quasar handles static assets!
 
-## Component registration
-
-### Load all components from folder
-
-Ideally we would like to load all components available from a folder...
-
-[webpack require.context](https://webpack.github.io/docs/context.html) should help us achieve this
+### Load components from folder
+Ideally we would like to load all components available from a folder (TODO)
+See [webpack require.context](https://webpack.github.io/docs/context.html)
 
 ## Display Code examples
-
-We will be trying to display code examples using [higlightjs](https://highlightjs.org/usage/)
-
-See [highlightjs Docs](http://highlightjs.readthedocs.io/en/latest/)
-
-Version 9.7 Has been installed via [npm](https://www.npmjs.com/package/highlight.js) and exports the `hljs` variable.
-See [API](http://highlightjs.readthedocs.io/en/latest/api.html)  
+[highlightjs](http://highlightjs.readthedocs.io/en/latest/) is used to highlight code examples.
+Version 9.7 has been installed via [npm](https://www.npmjs.com/package/highlight.js)  
 
 ```js
 import hljs from 'highlight.js'
 ```
 
-The `code-display` takes these props:
-
+The `code-display` can be used to display highlighted code examples. The component takes these props:
 - `title` - title of component
 - `code` code to highlight 
 - `language` - language of code to highlight (optional: uses auto-detect per default!) 
@@ -128,18 +126,23 @@ The `code-display` takes these props:
 <code-display title="VM" language="javascript" :code="vm"></code-display>
 ```
 
-You can also use the `slot` variant for simple cases: <span slot="code-block">var a = 2;</span>
+You can also use the [code-block slot](https://vuejs.org/guide/components.html#Content-Distribution-with-Slots) for simple cases: 
+
+```html
+<code-display title="VM" language="javascript" :code="vm">
+  <span slot="code-block">var a = 2;</span>
+</code-display>
+```
 
 ### Styling the highlight
-
-We use webpack loader from `main.js` to load a highlight theme
+Webpack is used to load stylesheeets such as the highlight theme from `main.js`.
 
 ```js
 const highlightTheme = 'gruvbox-dark'
 require('highlight.js/styles/' + highlightTheme + '.css')
 ```
 
-For theme overview, see: `node_modules/highlight.js/styles` 
+To change the highlight theme, see the themes available at `node_modules/highlight.js/styles` 
 
 ### Loading the code 
 We use the `raw-text` webpack loader with `!raw` prefix to load the text file into the code at compile time :)
@@ -174,7 +177,6 @@ Highlighted code:
 ```
 
 ### Using WebWorkers
-
 We could also use a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) 
 to highlight code when component is mounted.
 
@@ -203,8 +205,7 @@ onmessage = function(event) {
 ```
 
 ### Global Component registration
-
-Registration of `code-display` component is done in `main.js`
+Global registration of `code-display` component is done in `main.js`
 
 ```js
 import CodeDisplay from './components/global/code-display'

@@ -17,8 +17,8 @@
   </div>
 </template>
 <script>
-const vm = require('raw!../examples/list/vm.js.txt')
-const view = require('raw!../examples/list/view.html.txt')
+const vm = require('raw!../../examples/css/list/vm.js.txt')
+const view = require('raw!../../examples/css/list/view.html.txt')
 
 export default {
   data: () => {

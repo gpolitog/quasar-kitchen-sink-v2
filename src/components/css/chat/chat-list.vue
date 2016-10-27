@@ -14,8 +14,8 @@
 <script>
 import ChatMessage from './chat-message'
 
-const view = require('raw!../../examples/chat/view.html.txt')
-const vm = require('raw!../../examples/chat/vm.js.txt')
+const view = require('raw!../../../examples/css/chat/view.html.txt')
+const vm = require('raw!../../../examples/css/chat/vm.js.txt')
 
 // See https://vuejs.org/guide/list.html#Components-and-v-for
 

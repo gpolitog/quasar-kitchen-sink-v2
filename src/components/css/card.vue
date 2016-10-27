@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-const view = require('raw!../examples/card/view.html.txt')
+const view = require('raw!../../examples/css/card/view.html.txt')
 
 export default {
   data: () => {

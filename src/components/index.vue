@@ -35,7 +35,8 @@ export default {
         { link: 'card', label: 'Card' },
         { link: 'chat', label: 'Chat' },
         { link: 'label', label: 'Label' },
-        { link: 'list', label: 'List' }
+        { link: 'list', label: 'List' },
+        { link: 'timeline', label: 'Timeline' }
       ]
     }
   }

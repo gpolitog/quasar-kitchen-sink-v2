@@ -27,8 +27,8 @@ export default {
         { icon: 'cloud', label: 'Cloud' }
       ],
       code: {
-        vm: require('raw!../examples/breadcrumb/vm.js.txt'),
-        view: require('raw!../examples/breadcrumb/view.html.txt')
+        vm: require('raw!../../examples/css/breadcrumb/vm.js.txt'),
+        view: require('raw!../../examples/css/breadcrumb/view.html.txt')
       }
     }
   }

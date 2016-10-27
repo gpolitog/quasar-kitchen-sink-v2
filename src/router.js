@@ -7,13 +7,18 @@ Vue.use(VueRouter)
   Avoid lazy loading while in dev mode
   to benefit from HMR
  */
-function load (name) {
+function load (folder, name) {
+  let path = folder
+  if (folder && name) {
+    path = folder + '/' + name
+  }
+
   if (process.env.NODE_ENV === 'development') {
-    return require('components/' + name + '.vue')
+    return require('components/' + path + '.vue')
   }
   else {
     return (resolve) => {
-      require('bundle?lazy!components/' + name + '.vue')(resolve)
+      require('bundle?lazy!components/' + path + '.vue')(resolve)
     }
   }
 }
@@ -24,12 +29,13 @@ const router = new VueRouter({
     { path: '*', component: load('error404') }, // Not found
 
     // TODO: generate!
-    { path: '/breadcrumb', component: load('breadcrumb'), name: 'breadcrumb' },
-    { path: '/button', component: load('button'), name: 'button' },
-    { path: '/card', component: load('card'), name: 'card' },
-    { path: '/chat', component: load('chat/chat-list'), name: 'chat' },
-    { path: '/label', component: load('label'), name: 'label' },
-    { path: '/list', component: load('list'), name: 'list' }
+    { path: '/breadcrumb', component: load('css', 'breadcrumb'), name: 'breadcrumb' },
+    { path: '/button', component: load('css', 'button'), name: 'button' },
+    { path: '/card', component: load('css', 'card'), name: 'card' },
+    { path: '/chat', component: load('css', 'chat/chat-list'), name: 'chat' },
+    { path: '/label', component: load('css', 'label'), name: 'label' },
+    { path: '/list', component: load('css', 'list'), name: 'list' },
+    { path: '/timeline', component: load('css', 'timeline/timeline-list'), name: 'timeline' }
   ]
 })
 
