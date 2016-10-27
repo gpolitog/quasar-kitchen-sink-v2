@@ -28,6 +28,7 @@ const router = new VueRouter({
     { path: '/button', component: load('button'), name: 'button' },
     { path: '/card', component: load('card'), name: 'card' },
     { path: '/chat', component: load('chat/chat-list'), name: 'chat' },
+    { path: '/label', component: load('label'), name: 'label' },
     { path: '/list', component: load('list'), name: 'list' }
   ]
 })

@@ -9,9 +9,9 @@
           </div>
         </div>
       </div>
-      <code-display title="VM" language="javascript" :code="code.vm"> 
+      <code-display title="View" language="html" :code="code.view">
       </code-display>
-      <code-display title="View" language="html" :code="code.view"> 
+      <code-display title="VM" language="html" :code="code.vm">
       </code-display>
     </section>
   </div>
@@ -19,8 +19,6 @@
 <script>
 const vm = require('raw!../examples/list/vm.js.txt')
 const view = require('raw!../examples/list/view.html.txt')
-
-console.log('vm', vm)
 
 export default {
   data: () => {

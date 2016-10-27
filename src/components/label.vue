@@ -3,8 +3,7 @@
     <section class="example">
       <!-- Basic Labels -->
       <div class="labels basic" v-for="label in labels.basic">
-        <span class="label bg-primary text-white">{{ label.text }}</span>
-        <span class="label bg-secondary text-white shadow-1">{{ label.text }}</span>
+        <span class="label" :class="label.styles">{{ label.text }}</span>
       </div>
       <!-- Floating Labels -->
       <button class="light relative-position">
@@ -15,19 +14,34 @@
         {{ labels.floating[1].text }}
         <span class="floating label bg-dark">22</span>
       </button>
+      <code-display title="View" language="html" :code="code.view">
+      </code-display>
+      <code-display title="VM" language="html" :code="code.vm">
+      </code-display>
     </section>
   </div>
 </template>
 <script>
-// TODO: make classes dynamic!
-
 export default {
   data: () => {
     return {
       labels: {
         basic: [
-          { text: 'one' },
-          { text: 'two' }
+          {
+            text: 'one',
+            styles: {
+              'bg-primary': true,
+              'text-white': true
+            }
+          },
+          {
+            text: 'two',
+            styles: {
+              'bg-secondary': true,
+              'text-white': true,
+              'shadow-1': true
+            }
+          }
         ],
         floating: [
           { text: 'red' },

@@ -21,8 +21,7 @@ export default {
   },
   computed: {
     avatar () {
-      return '~assets/avatars/penguin.png'
-      // return require('~assets/avatars/' + this.message.user + '.png')
+      return require('../../assets/avatars/' + this.message.user + '.png')
     },
     chatType () {
       return `chat-${this.message.type}`

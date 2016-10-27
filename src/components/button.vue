@@ -9,9 +9,9 @@
       <button class="primary circular">
         <i>alarm</i>
       </button>
-      <code-display title="VM" language="html" :code="code.vm">
-      </code-display>  
       <code-display title="View" language="html" :code="code.view">
+      </code-display>
+      <code-display title="VM" language="html" :code="code.vm">
       </code-display>
     </section>
   </div>

@@ -4,10 +4,10 @@
       <div class="chat-list">
         <chat-message v-for="message in messages" :message="message"/>
       </div>
+      <code-display title="View" language="html" :code="code.view"> 
+      </code-display>
       <code-display title="VM" language="javascript" :code="code.vm"> 
       </code-display>
-      <code-display title="View" language="html" :code="code.view"> 
-      </code-display>      
     </section>
   </div>
 </template>
@@ -21,7 +21,6 @@ const vm = require('raw!../../examples/chat/vm.js.txt')
 
 export default {
   components: {
-    // <my-component> will only be available in parent's template
     'chat-message': ChatMessage
   },
   data: () => {

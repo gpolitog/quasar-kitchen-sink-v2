@@ -1,27 +1,19 @@
-<div class="chat-other">
-  <div class="chat-user">
-    <img src="assets/linux-avatar.png">
-  </div>
-  <div class="chat-date">
-    {{ received.timeAgo }
-  </div>
-  <div class="chat-message">
-    <p>
-      {{ received.message }
-    </p>
-  </div>
+<!-- chat list -->
+<div class="chat-list">
+  <chat-message v-for="message in messages" :message="message"/>
 </div>
-<!-- Message sent by you -->
-<div class="chat-you">
+
+<!-- chat-message -->
+<div :class="chatType">
   <div class="chat-user">
-    <img src="assets/boy-avatar.png">
+    <img :src="avatar">
   </div>
   <div class="chat-date">
-    {{ sent.timeAgo }}
+    {{ message.timestamp }}
   </div>
   <div class="chat-message">
     <p>
-      {{ sent.message }}
+      {{ message.message }}
     </p>
   </div>
 </div>

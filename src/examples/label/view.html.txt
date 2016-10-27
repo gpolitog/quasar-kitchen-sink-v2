@@ -1,14 +1,9 @@
-<!-- Basic Labels -->
-<div class="labels basic" v-for="label in labels.basic">
-  <span class="label bg-primary text-white">{{ label.text }}</span>
-  <span class="label bg-secondary text-white shadow-1">{{ label.text }}</span>
-</div>
-<!-- Floating Labels -->
+<!-- Floating Label -->
 <button class="light relative-position">
   Inbox
   <span class="floating label circular bg-primary text-white">22</span>
 </button>
-<button class="red relative-position">
-  Inbox
-  <span class="floating label bg-dark">22</span>
-</button>
+<!-- Dynamic Labels: binding class to object -->
+<div class="labels basic" v-for="label in labels.basic">
+  <span class="label" :class="label.styles">{{ label.text }}</span>
+</div>

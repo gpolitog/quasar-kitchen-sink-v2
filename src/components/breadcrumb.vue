@@ -8,10 +8,10 @@
           </a>
         </li>
       </ul>
-      <code-display title="VM" language="html" :code="code.vm">
-      </code-display>  
       <code-display title="View" language="html" :code="code.view">
-      </code-display>  
+      </code-display>
+      <code-display title="VM" language="html" :code="code.vm">
+      </code-display>
     </section>
   </div>  
 </template>

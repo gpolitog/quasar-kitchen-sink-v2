@@ -1,16 +1,46 @@
+// chat-list VM
 export default {
+  components: {
+    'chat-message': ChatMessage
+  },
   data: () => {
     return {
-      received: {
-        timeAgo: '1 minute ago',
-        message: 'hi there'
+      code: {
+        view: view,
+        vm: vm
       },
-      sent: {
-        timeAgo: '1 minute ago',
-        message: 'hello'
-      }      
+      you: {
+        avatar: 'boy'
+      },
+      messages: [
+        {
+          type: 'you',
+          user: 'boy', // TODO: should reference you.avatar
+          text: 'hello world',
+          timestamp: '2 mins ago'
+        },
+        {
+          type: 'other',
+          user: 'penguin',
+          text: 'alien here :)',
+          timestamp: '1 min ago'
+        }
+      ]
     }
-  },
+  }
+}
+
+// chat-message VM
+export default {
+  props: ['message'],
   methods: {
+  },
+  computed: {
+    avatar () {
+      return require('../../assets/avatars/' + this.message.user + '.png')
+    },
+    chatType () {
+      return `chat-${this.message.type}`
+    }
   }
 }

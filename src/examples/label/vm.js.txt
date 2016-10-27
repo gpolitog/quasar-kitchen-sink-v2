@@ -3,9 +3,22 @@ export default {
     return {
       labels: {
         basic: [
-          { text: 'one' },
-          { text: 'two' }
-        ] 
+          {
+            text: 'one',
+            styles: {
+              'bg-primary': true,
+              'text-white': true
+            }
+          },
+          {
+            text: 'two',
+            styles: {
+              'bg-secondary': true,
+              'text-white': true,
+              'shadow-1': true
+            }
+          }
+        ]
       }
     }
   }
