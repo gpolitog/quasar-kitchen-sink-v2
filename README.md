@@ -113,6 +113,17 @@ const router = new VueRouter({
 
 See the Vue 2 [Forms guide](https://vuejs.org/guide/forms.html)
 
+## Drawers & Layouts
+
+The Drawers are only really useful on small displays with limited screen real estate. 
+The toolbar menu button to display a drawer is only shown when screen size is reduced and drawer is available.
+
+Be sure to carefully read [Layouts - basic usage](http://quasar-framework.org/components/layout-overview.html#Basic-Usage)
+
+## Search
+
+See example: [Search via computed properties and watchers](http://vuejs.org/guide/computed.html)
+
 ## Routes
 
 Use [Nested routes](https://router.vuejs.org/en/essentials/nested-routes.html)
