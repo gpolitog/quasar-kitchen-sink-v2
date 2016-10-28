@@ -25,6 +25,12 @@ import CodeDisplay from './components/global/code-display'
 // Vue.component('code-display', components.global.CodeDisplay)
 Vue.component('code-display', CodeDisplay)
 
+import { LeftMenu, RightMenu, DoubleMenu } from './components/layouts/toolbars'
+
+Vue.component('left-menu', LeftMenu)
+Vue.component('right-menu', RightMenu)
+Vue.component('double-menu', DoubleMenu)
+
 Quasar.start(() => {
   /* eslint-disable no-new */
   new Vue({
