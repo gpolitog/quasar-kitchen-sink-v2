@@ -1,20 +1,10 @@
 <template>
-  <div slot="header" class="toolbar inverted orange">
-    <button
-      class="hide-on-drawer-visible"
-      @click="$refs.leftDrawer.open()"
-    >
-      <i>menu</i>
-    </button>      
-
+  <div class="toolbar">
     <quasar-toolbar-title :padding="1">
       Quasar Kitchen Sink Components
     </quasar-toolbar-title>
 
-    <button
-      class="hide-on-drawer-visible"
-      @click="$refs.rightDrawer.open()"
-    >
+    <button class="hide-on-drawer-visible">
       <i>menu</i>
     </button>      
   </div>

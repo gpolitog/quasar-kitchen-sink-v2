@@ -1,9 +1,6 @@
 <template>
-  <div slot="header" class="toolbar inverted orange">
-    <button
-      class="hide-on-drawer-visible"
-      @click="$refs.leftDrawer.open()"
-    >
+  <div class="toolbar inverted orange">
+    <button>
       <i>menu</i>
     </button>      
 
@@ -11,10 +8,7 @@
       Quasar Kitchen Sink Components
     </quasar-toolbar-title>
 
-    <button
-      class="hide-on-drawer-visible"
-      @click="$refs.rightDrawer.open()"
-    >
+    <button>
       <i>menu</i>
     </button>      
   </div>

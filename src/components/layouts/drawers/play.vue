@@ -1,7 +1,7 @@
 <template>
   <quasar-layout>
     <div slot="header" class="toolbar">
-      <button class="hide-on-drawer-visible" @click="leftClick()">
+      <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
         <i>menu</i>
       </button>
       <quasar-toolbar-title :padding="1">
@@ -17,10 +17,10 @@
     </div>
 
     <quasar-tabs slot="navigation">
-      <quasar-tab icon="view_quilt" route="/showcase/layout" exact replace>About</quasar-tab>
-      <quasar-tab icon="view_day" route="/showcase/layout/toolbar" replace>Toolbar</quasar-tab>
-      <quasar-tab icon="view_day" route="/showcase/layout/tabs" replace>Tabs</quasar-tab>
-      <quasar-tab icon="input" route="/showcase/layout/drawer" replace>Drawer</quasar-tab>
+      <quasar-tab icon="view_quilt" route="/form" exact replace>Form</quasar-tab>
+      <quasar-tab icon="view_day" route="/css" replace>CSS</quasar-tab>
+      <quasar-tab icon="view_day" route="/special" replace>Special</quasar-tab>
+      <quasar-tab icon="input" route="/layouts" replace>Layouts</quasar-tab>
     </quasar-tabs>
 
     <quasar-drawer ref="leftDrawer">
@@ -31,18 +31,18 @@
       </div>
 
       <div class="list no-border platform-delimiter">
-        <quasar-drawer-link icon="view_quilt" to="/showcase/layout" exact>
+        <quasar-drawer-link icon="view_quilt" to="/layouts" exact>
           About Layout
         </quasar-drawer-link>
         <hr>
         <div class="list-label">Layout Components</div>
-        <quasar-drawer-link icon="build" to="/showcase/layout/toolbar" exact>
-          Toolbar
+        <quasar-drawer-link icon="build" to="/layouts/toolbar/left-menu" exact>
+          Simple Toolbar
         </quasar-drawer-link>
-        <quasar-drawer-link icon="tab" to="/showcase/layout/tabs" exact>
-          Tabs
+        <quasar-drawer-link icon="tab" to="/layouts/tabs/simple" exact>
+          Simple Tabs
         </quasar-drawer-link>
-        <quasar-drawer-link icon="compare_arrows" to="/showcase/layout/drawer" exact>
+        <quasar-drawer-link icon="compare_arrows" to="/layouts/drawers/double" exact>
           Layout Drawer
         </quasar-drawer-link>
       </div>

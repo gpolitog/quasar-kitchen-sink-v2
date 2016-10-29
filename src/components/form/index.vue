@@ -1,14 +1,11 @@
 <template>
-  <div class="layout-view">
-    <p class="caption">Quasar Kitchen Sink Components</p>
-    <div class="list">
-      <div class="item" v-for="item in items">
-        <div class="item-content">
-          <router-link :to="{ name: item.link }">{{ item.label }}</router-link>
-        </div>
-      </div>
-    </div>
-      <router-view></router-view>
+  <div class="page">
+    <p class="caption">Form Components</p>
+    <quasar-tabs :refs="$refs" default-tab="checkbox">
+      <quasar-tab v-for="(tab, index) in tabs" :name="tab.name" icon="tab.icon" :route="tab.link">    
+      </quasar-tab>
+    </quasar-tabs>
+    <router-view></router-view>
   </div>
 </template>
 <script>

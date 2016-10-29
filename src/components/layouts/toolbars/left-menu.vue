@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <div class="toolbar orange">
     <button
       class="hide-on-drawer-visible"
       @click="onClickLeft()"
@@ -10,14 +10,7 @@
     <quasar-toolbar-title :padding="1">
       Components
     </quasar-toolbar-title>
-
-    <button
-      class="hide-on-drawer-visible"
-      @click="onClickRight()"
-    >
-      <i>menu</i>
-    </button>
-  </span>
+  </div>
 </template>
 <script>
 export default {
@@ -28,12 +21,10 @@ export default {
   },
   methods: {
     onClickLeft () {
-      console.log('leftDrawer', this.refs, this.refs.leftDrawer)
-      // this.refs.leftDrawer.open()
+      console.log('left')
     },
     onClickRight () {
-      console.log('rightDrawer', this.refs.rightDrawer)
-      // this.refs.rightDrawer.open()
+      console.log('right')
     }
   }
 }
