@@ -120,6 +120,18 @@ The toolbar menu button to display a drawer is only shown when screen size is re
 
 Be sure to carefully read [Layouts - basic usage](http://quasar-framework.org/components/layout-overview.html#Basic-Usage)
 
+## Toolbars
+
+Ideally toolbars and drawers should be independent components. 
+
+```html
+<toolbar slot="header" class="toolbar inverted orange">
+  <quasar-toolbar-title :padding="1">
+    Components
+  </quasar-toolbar-title>
+
+``` 
+
 ## Search
 
 See example: [Search via computed properties and watchers](http://vuejs.org/guide/computed.html)

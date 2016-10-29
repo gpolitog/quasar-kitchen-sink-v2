@@ -2,13 +2,13 @@
   <section class="example">
     <button @click="showToast()">Show toast</button>
   </section>
-</template
+</template>
 <script>
 import { Toast } from 'quasar'
 
 export default {
   methods: {
-    showToast() {
+    showToast () {
       Toast.create({
         html: 'Message to display',
         icon: 'alarm_add',

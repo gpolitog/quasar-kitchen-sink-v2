@@ -1,14 +1,14 @@
 <template>
   <section class="example">
-    <button @click="showDialog()">Show dialog</button>
+    <button @click="showActionSheet()">Show action sheet</button>
   </section>
-</template
+</template>
 <script>
 import { ActionSheet } from 'quasar'
 
 export default {
   methods: {
-    showActionSheet() {
+    showActionSheet () {
       ActionSheet.create({
         title: 'Article Actions',
         // specify ONLY IF you want gallery mode:
@@ -19,7 +19,7 @@ export default {
             // Choose one of the following two:
             icon: 'delete', // specify ONLY IF using icon
             avatar: 'assets/some-avatar.png', // specify ONLY IF using avatar
-            handler: function() {
+            handler: () => {
               console.log('Deleted Article')
             }
           }
@@ -29,8 +29,8 @@ export default {
           label: 'Cancel',
           icon: 'cancel',
           classes: 'text-primary',
-          handler: function() {
-            // console.log('Cancelled...')
+          handler: () => {
+            console.log('Cancelled...')
           }
         }
       })

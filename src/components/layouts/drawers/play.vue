@@ -7,7 +7,7 @@
       <quasar-toolbar-title :padding="1">
         Quasar Layout
       </quasar-toolbar-title>
-      <button @click="leftClick()">
+      <button @click="rightClick()">
         <i>assignment</i>
       </button>
     </div>
@@ -50,7 +50,7 @@
 
     <router-view class="layout-view"></router-view>
 
-    <quasar-drawer right-side swipe-only ref="rightDrawer" swipe-only>
+    <quasar-drawer right-side ref="rightDrawer">
       <div class="toolbar light">
         <quasar-toolbar-title :padding="1">
             Right-side Drawer
@@ -90,13 +90,10 @@ export default {
     leftClick () {
       let drawer = this.$refs.leftDrawer
       console.log('left', drawer)
-      drawer.open()
-    },
-    rightClick () {
-      let drawer = this.$refs.rightDrawer
-      console.log('right', drawer)
-
-      drawer.open()
+      drawer.open(() => {
+        console.log('left drawer was opened')
+      })
+      drawer.toggle()
     }
   }
 }

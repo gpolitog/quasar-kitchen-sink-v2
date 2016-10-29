@@ -2,13 +2,15 @@
   <section class="example">
     <button @click="showLoading()">Show loading</button>
   </section>
-</template
+</template>
 <script>
 import { Loading } from 'quasar'
 
 export default {
   methods: {
-    showLoading() {
+    showLoading () {
+      // TODO: some way to remove message!!!
+
       // customizable
       Loading.show({
         message: 'Some message',
@@ -16,7 +18,7 @@ export default {
         spinner: 'dots',
         spinnerSize: 250, // in pixels
         spinnerColor: '#f034a3'
-      })    
+      })
     }
   }
 }

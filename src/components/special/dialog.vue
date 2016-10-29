@@ -2,13 +2,13 @@
   <section class="example">
     <button @click="showDialog()">Show dialog</button>
   </section>
-</template
+</template>
 <script>
 import { Dialog } from 'quasar'
 
 export default {
   methods: {
-    showDialog() {
+    showDialog () {
       Dialog.create({
         title: 'Warning',
         message: 'You are about to run out of disk space.',

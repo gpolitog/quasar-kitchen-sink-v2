@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import DrawerLayout from './layouts/drawers/play'
+import DrawerLayout from './layouts/drawers/left'
 
 export default {
   components: {
