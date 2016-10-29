@@ -162,8 +162,9 @@ so that we get the same visual result.
 ```html
 <style>
 .toolbar-wrapper {
-  display: inherit;
+  display: inline-flex;
   text-align: center;
+  align-items: center;
   width: 100%;
 }
 </style>
@@ -187,12 +188,28 @@ Notice: We have to open inside click handlers so that the `refs` are resolved ru
 
 ```js
 export default {
-    props: ['refs']
-  },
+  props: ['refs'],
   methods: {
     onClickLeft () {
-      this.refs.leftDrawer.open()
+      let drawer = this.refs.leftDrawer
+      // console.log('left drawer', drawer)
+      if (drawer) {
+        drawer.open(() => {
+          console.log('opened')
+        })
+      }
     }
+  }
+}
+```
+
+Or more simply:
+
+```js
+onClickLeft () {
+  let drawer = this.refs.leftDrawer
+  if (drawer) {
+    drawer.open()
   }
 }
 ```

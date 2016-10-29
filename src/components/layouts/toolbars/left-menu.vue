@@ -1,31 +1,46 @@
 <template>
-  <div class="toolbar orange">
-    <button
-      class="hide-on-drawer-visible"
-      @click="onClickLeft()"
-    >
+  <span class="toolbar-wrapper">
+    <button class="hide-on-drawer-visible" @click="onClickLeft()">
       <i>menu</i>
-    </button>      
-
+    </button>
     <quasar-toolbar-title :padding="1">
-      Components
+      Quasar Layout
     </quasar-toolbar-title>
-  </div>
+    <button @click="onClickRight()">
+      <i>assignment</i>
+    </button>
+  </span>
 </template>
 <script>
 export default {
-  props: {
-    refs: {
-      type: Object
-    }
-  },
+  props: ['refs'],
   methods: {
     onClickLeft () {
-      console.log('left')
+      let drawer = this.refs.leftDrawer
+      console.log('left', drawer)
+      if (drawer) {
+        drawer.open(() => {
+          console.log('opened')
+        })
+      }
     },
     onClickRight () {
-      console.log('right')
+      let drawer = this.refs.rightDrawer
+      console.log('right', drawer)
+      if (drawer) {
+        drawer.open(() => {
+          console.log('opened')
+        })
+      }
     }
   }
 }
 </script>
+<style>
+.toolbar-wrapper {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+</style>

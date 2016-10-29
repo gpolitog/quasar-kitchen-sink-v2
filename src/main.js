@@ -21,7 +21,7 @@ Vue.use(Quasar) // Install Quasar Framework
 
 import CodeDisplay from './components/global/code-display'
 
-const log = console.log
+// const log = console.log
 
 // Ideally iterate through global components!
 // Vue.component('code-display', components.global.CodeDisplay)
@@ -29,8 +29,6 @@ Vue.component('code-display', CodeDisplay)
 
 import { default as toolbars } from './components/layouts/toolbars'
 const {LeftMenu, RightMenu, DoubleMenu} = toolbars
-
-log('left menu', LeftMenu)
 
 Vue.component('left-menu', LeftMenu)
 Vue.component('right-menu', RightMenu)

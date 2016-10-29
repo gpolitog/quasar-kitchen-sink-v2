@@ -1,18 +1,7 @@
 <template>
   <quasar-layout>
-    <div slot="header" class="toolbar">
-      <span>
-        <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
-          <i>menu</i>
-        </button>
-        <quasar-toolbar-title :padding="1">
-          Quasar Layout
-        </quasar-toolbar-title>
-        <button @click="rightClick()">
-          <i>assignment</i>
-        </button>
-      </span>
-    </div>
+    <left-menu slot="header" :refs="$refs">
+    </left-menu>
 
     <div slot="header" class="toolbar primary">
       <quasar-search :model.sync="search" class="primary"></quasar-search>
