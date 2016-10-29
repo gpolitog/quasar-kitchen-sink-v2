@@ -1,15 +1,17 @@
 <template>
   <quasar-layout>
     <div slot="header" class="toolbar">
-      <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
-        <i>menu</i>
-      </button>
-      <quasar-toolbar-title :padding="1">
-        Quasar Layout
-      </quasar-toolbar-title>
-      <button @click="rightClick()">
-        <i>assignment</i>
-      </button>
+      <span>
+        <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
+          <i>menu</i>
+        </button>
+        <quasar-toolbar-title :padding="1">
+          Quasar Layout
+        </quasar-toolbar-title>
+        <button @click="rightClick()">
+          <i>assignment</i>
+        </button>
+      </span>
     </div>
 
     <div slot="header" class="toolbar primary">

@@ -120,9 +120,14 @@ The toolbar menu button to display a drawer is only shown when screen size is re
 
 Be sure to carefully read [Layouts - basic usage](http://quasar-framework.org/components/layout-overview.html#Basic-Usage)
 
+I initially had problems making drawers work on Chrome (Developer channel) but they worked just fine on the Brave browser.
+Your mileage might vary, be careful!
+
 ## Toolbars
 
-Ideally toolbars and drawers should be independent components. 
+Ideally toolbars and drawers should be independent components.
+
+`layout.vue`
 
 ```html
 <toolbar slot="header" class="toolbar inverted orange">
@@ -130,7 +135,67 @@ Ideally toolbars and drawers should be independent components.
     Components
   </quasar-toolbar-title>
 
-``` 
+```
+
+To do this, we create a custom toolbar component, then wrap the toolbar elements.
+
+`toolbar.vue`
+
+```
+<template>
+  <span class="toolbar-wrapper">
+    <!-- toolbar elements -->  
+    <button
+      class="hide-on-drawer-visible"
+      @click="onClickLeft()"
+    >
+    <quasar-toolbar-title :padding="1">
+      Quasar Kitchen Sink Components
+    </quasar-toolbar-title>  
+  </span>
+</template>
+```
+
+However, this will by default mess up our styling, so we need to apply a CSS class rule to re-adjust
+so that we get the same visual result. 
+
+```html
+<style>
+.toolbar-wrapper {
+  display: inherit;
+  text-align: center;
+  width: 100%;
+}
+</style>
+```
+
+We also need to pass the `$refs` to the child element, using `:refs="$refs"`.
+
+`layout.vue`
+
+```html
+<toolbar slot="header" class="toolbar inverted orange" :refs="$refs">
+  ...
+</toolbar>
+```
+
+The toolbar component then needs to catch this `refs` property.
+We also add click handlers that use the refs to open the drawers from the parent component...
+Notice: We have to open inside click handlers so that the `refs` are resolved runtime.
+
+`toolbar.vue`
+
+```js
+export default {
+    props: ['refs']
+  },
+  methods: {
+    onClickLeft () {
+      this.refs.leftDrawer.open()
+    }
+  }
+}
+```
 
 ## Search
 

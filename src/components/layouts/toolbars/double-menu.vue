@@ -10,7 +10,7 @@
 
     <button>
       <i>menu</i>
-    </button>      
+    </button>
   </div>
 </template>
 <script>
