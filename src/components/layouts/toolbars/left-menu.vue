@@ -20,7 +20,7 @@ export default {
       console.log('left', drawer)
       if (drawer) {
         drawer.open(() => {
-          console.log('opened')
+          console.log('left opened')
         })
       }
     },
@@ -29,7 +29,7 @@ export default {
       console.log('right', drawer)
       if (drawer) {
         drawer.open(() => {
-          console.log('opened')
+          console.log('right opened')
         })
       }
     }

@@ -143,7 +143,7 @@ To do this, we create a custom toolbar component, then wrap the toolbar elements
 
 ```
 <template>
-  <span class="toolbar-wrapper">
+  <span class="wrapper">
     <!-- toolbar elements -->  
     <button
       class="hide-on-drawer-visible"
@@ -161,7 +161,7 @@ so that we get the same visual result.
 
 ```html
 <style>
-.toolbar-wrapper {
+.wrapper {
   display: inline-flex;
   text-align: center;
   align-items: center;
