@@ -1,7 +1,7 @@
 <template>
   <quasar-layout>
-    <left-menu slot="header" :refs="$refs">
-    </left-menu>
+    <right-menu slot="header" :refs="$refs">
+    </right-menu>
 
     <div slot="header" class="toolbar primary">
       <quasar-search :model.sync="search" class="primary"></quasar-search>

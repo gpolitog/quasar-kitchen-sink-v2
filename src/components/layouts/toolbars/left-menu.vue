@@ -1,6 +1,6 @@
 <template>
-  <span class="toolbar-wrapper">
-    <button class="hide-on-drawer-visible" @click="onClickLeft()">
+  <span class="toolbar">
+    <button class="hide-on-drawer-visible" @click="refs.leftDrawer.open()">
       <i>menu</i>
     </button>
     <quasar-toolbar-title :padding="1">
@@ -43,4 +43,9 @@ export default {
   align-items: center;
   width: 100%;
 }
+
+.toolbar {
+  text-align: center;
+}
+
 </style>

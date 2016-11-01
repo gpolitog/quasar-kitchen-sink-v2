@@ -13,7 +13,6 @@ require('quasar/dist/quasar.' + __THEME + '.css')
 // ==============================
 
 const highlightTheme = 'gruvbox-dark'
-
 require('highlight.js/styles/' + highlightTheme + '.css')
 
 Quasar.theme.set(__THEME)
@@ -30,6 +29,7 @@ Vue.component('code-display', CodeDisplay)
 import { default as toolbars } from './components/layouts/toolbars'
 const {LeftMenu, RightMenu, DoubleMenu} = toolbars
 
+// make toolbars into global components
 Vue.component('left-menu', LeftMenu)
 Vue.component('right-menu', RightMenu)
 Vue.component('double-menu', DoubleMenu)
