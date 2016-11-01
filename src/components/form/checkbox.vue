@@ -2,8 +2,8 @@
   <div class="layout-view">
     <section class="example">  
       <label>
-        <quasar-checkbox v-model="checked"></quasar-checkbox>
-        Checkbox Label
+        <quasar-checkbox v-model="blue"></quasar-checkbox>
+        Blue Checkbox
       </label>
       <div class="list">
         <label v-for="item in items">
@@ -21,7 +21,8 @@ export default {
       items: [
         {label: 'male', checked: false},
         {label: 'female', checked: true}
-      ]
+      ],
+      blue: true
     }
   }
 }

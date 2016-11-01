@@ -10,9 +10,14 @@
 export default {
   data: () => {
     return {
-      items: [{
-        label: 'a', value: 2
-      }]
+      items: [
+        {
+          label: 'a', value: 2
+        },
+        {
+          label: 'b', value: 4
+        }
+      ]
     }
   }
 }

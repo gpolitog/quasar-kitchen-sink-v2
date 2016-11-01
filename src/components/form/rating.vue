@@ -1,7 +1,7 @@
 <template>
   <section class="example">
   <label v-for="rating in ratings">
-    <quasar-rating class="yellow" v-model="rating.value" :max-grade="3"></quasar-rating>
+    <quasar-rating class="yellow" v-model="rating.value" :max-grade="5"></quasar-rating>
   </label>
 </section>
 </template>
@@ -10,7 +10,8 @@ export default {
   data: () => {
     return {
       ratings: [
-        { value: 2 }
+        { value: 2 },
+        { value: 4 }
       ]
     }
   }
