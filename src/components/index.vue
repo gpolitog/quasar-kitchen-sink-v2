@@ -1,15 +1,15 @@
 <template>
-  <drawer-layout>
+  <play-layout>
     <!-- TODO: use slots -->
-  </drawer-layout>
+  </play-layout>
 </template>
 
 <script>
-import DrawerLayout from './layouts/play'
+import PlayLayout from './layouts/play'
 
 export default {
   components: {
-    'drawer-layout': DrawerLayout
+    'play-layout': PlayLayout
   },
   data: () => {
     return {
