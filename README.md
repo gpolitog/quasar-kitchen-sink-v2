@@ -1,5 +1,7 @@
 # Quasar Kitchen Sink v2 App
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kristianmandrup/quasar-kitchen-sink-v2.svg)](https://greenkeeper.io/)
+
 A [Quasar](http://quasar-framework.org/) Kitchen Sink app for Vue2. 
 
 Initialized using [Quasar CLI](https://github.com/rstoenescu/quasar-cli) with the `v2` [template](https://github.com/rstoenescu/quasar-templates/tree/v2).
